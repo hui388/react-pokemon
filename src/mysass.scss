@@ -1,0 +1,47 @@
+$myColor: red;
+
+a {
+  color: $myColor;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+    background: linear-gradient(to bottom, #d96764 0%,#d96764 50%,#000000 50%,white 50%,white 100%);
+}
+
+.App-title {
+    color: white;
+    text-align: center;
+}
+
+.category {
+    text-align: center;
+}
+
+.form-container {
+    background-color: white;
+    margin: auto;
+    width: 50%;
+    height:80vh;
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 25px;
+}
+
+.selector {
+    width: 20%;
+    margin: auto;
+}
+
+.form-team {
+    height:20px;
+width:100px;
+margin: -20px -50px;
+position:relative;
+top:50%;
+left:50%;
+}
