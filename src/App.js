@@ -30,7 +30,7 @@ function App() {
             <Select className="selector" value="chocolate" options={types} />
             <h2 className="category">Color</h2>
             <Select className="selector" value="chocolate" options={colors} />
-            <button className="form-team">Form Team!</button>
+            <button className="form">Form Team!</button>
         </div>
 
     </div>
