@@ -1,20 +1,20 @@
-$myColor: red;
-
-a {
-  color: $myColor;
-}
-
 html {
     height: 100%;
     width: 100%;
     background-attachment:fixed;
     background-repeat: no-repeat;
-    background: linear-gradient(to bottom, #d96764 0%,#d96764 50%,#000000 50%,white 50%,white 100%);
+}
+
+
+body{
+    height:100%;
+    background: linear-gradient(#d96764 50%, transparent 50%) no-repeat;
 }
 
 .App-title {
     color: white;
     text-align: center;
+    font-family: 'Cabin', sans-serif;
 }
 
 .category {
@@ -25,11 +25,13 @@ html {
     background-color: white;
     margin: auto;
     width: 720px;
-    height:70vh;
+    height:600px;
     border: 2px;
     border-color: black;
     border-style: solid;
-    // border-radius: 25px;
+    display: flex;
+    font-family: 'Cabin', sans-serif;
+    // min-height:
 }
 
 .selector {
@@ -39,13 +41,260 @@ html {
 
 .form-team {
     height:20px;
-width:100px;
-margin: -20px -50px;
-position:relative;
-top:50%;
-left:50%;
+    width:100px;
+    margin: -20px -50px;
+    position:relative;
+    top:50%;
+    left:50%;
 }
 
 @media only screen and (max-width: 720px) {
   .form-container {width: 95%;}
+}
+
+.team-container {
+    width: 80%;
+    margin: auto;
+    margin-top: 5%;
+    display:flex;
+    flex-wrap:wrap;
+}
+
+
+.member  {
+  padding: 10% 0;
+  border-width: 6px;
+  border-radius: 10%;
+  border-style:solid;
+  margin: 1% 1%;
+  flex:1;
+  flex: 1 1 30%;
+  text-align: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-wrap: wrap;
+};
+
+.member:focus {
+    outline: none;
+}
+
+.sprite {
+    max-width: 96px;
+}
+
+@media only screen and (max-width: 552px) {
+  .member {
+      flex: 1 1 20%;
+  }
+}
+
+.hold-team {
+    width: 100%;
+}
+.inside {
+    background-color: green;
+}
+
+.type-icon {
+    display: inline-block;
+}
+
+.attributes {
+    display: flex;
+    width: 100%;
+}
+
+.member-sprite {
+    display: block;
+    box-shadow: 5px 10px 8px #a8a8a8;
+    border-radius: 15%;
+    margin-top: 20%;
+    margin-bottom: 20%;
+}
+
+
+.hold-moves {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: space-between;
+    height: 50%;
+}
+
+.one {
+    flex: 1 1 50%;
+    padding-top: 2%;
+    margin-left: 8%;
+}
+
+.three {
+    flex: 1 1 50%;
+    flex-wrap: wrap;
+    padding-top: 2%;
+    margin-right: 8%;
+}
+
+.move {
+    // border-style: solid;
+    font-weight: bold;
+    padding: 7%;
+    display: inline-block;
+    text-align: center;
+    border-radius: 30%;
+}
+
+.gender {
+    display: inline;
+    font-size: 200%;
+    font-weight:bold;
+}
+
+.pokeName {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 200%;
+}
+
+.ability-name {
+    border-style: solid;
+    border-color: gray;
+    padding: 1%;
+    font-size: 120%;
+    font-weight: bold;
+    display:inline-block;
+    border-radius: 20%;
+    margin-bottom: 5%;
+    margin-top: 5vh;
+}
+
+.ability-description {
+    border-style: solid;
+    border-color: gray;
+    font-size: 100%;
+    padding: 4%;
+    display:inline-block;
+    border-radius: 20%;
+}
+
+.one > p {
+    font-size: 1.5rem;
+}
+
+.animate-flicker {
+   -webkit-animation: spin 4s linear infinite;
+   -moz-animation: spin 4s linear infinite;
+   -o-animation: spin 4s linear infinite;
+    animation: spin 4s linear infinite;
+    height:40%;
+    display:block;
+}
+
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+
+.loader {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.loader > p {
+    font-size: 200%;
+}
+
+.member:hover {
+    -webkit-transform: scale(1.08);
+     -ms-transform: scale(1.08);
+     transform: scale(1.08);
+}
+
+.member:hover .sprite {
+    -webkit-transform: scale(.925);
+    -ms-transform: scale(.925);
+    transform: scale(.925);
+}
+
+.attribute-back {
+    background-color:  #d96764;
+    width: 100px;
+    height: 50px;
+    border-radius: 35%;
+    font-family: inherit;
+    font-size: 100%;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+.attribute-back:hover {
+    -webkit-transform: scale(1.05);
+         -ms-transform: scale(1.05);
+             transform: scale(1.05);
+}
+
+.attribute-back:focus {
+    outline: none;
+}
+
+.team-back {
+    background-color:  #d96764;
+    border-radius: 35%;
+    font-family: inherit;
+    height: 30px;
+    margin-left: 10px;
+    margin-top: 10px;
+
+}
+
+.team-back:focus {
+    outline: none;
+}
+
+
+.team-back:hover {
+    -webkit-transform: scale(1.05);
+         -ms-transform: scale(1.05);
+             transform: scale(1.05);
+}
+
+
+.choose-type {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 3vw;
+
+
+}
+
+.search-form {
+    margin: 0 auto;
+
+}
+
+.selecting {
+    height: 50px;
+    width: 150px;
+    font-family: 'Cabin', sans-serif;
+    font-size: 25px;
+}
+
+.selecting:focus {
+    outline: none;
+
+}
+
+.generate-button {
+    height: 50px;
+    width: 100px;
+    font-family: 'Cabin', sans-serif;
+    font-size: 25px;
+
 }

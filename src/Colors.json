@@ -1,0 +1,20 @@
+{
+    "normal":"#d4d4d4",
+    "fire":"#ff9270",
+    "bug": "#869c81",
+    "dark": "#575757",
+    "dragon": "#b0aae6",
+    "electric": "#faf7ac",
+    "fairy": "#feb0ff",
+    "fighting": "#fcab53",
+    "flying": "#97ccf0",
+    "ghost": "#b597f0",
+    "grass": "#97f09a",
+    "ground": "#b3995d",
+    "ice": "#86e7f0",
+    "poison": "#a26dd6",
+    "psychic": "#bf72e0",
+    "rock": "#8f7949",
+    "steel": "#a3a3a3",
+    "water": "#90aaf5"
+}
