@@ -18,21 +18,10 @@ function App() {
     const [clickedPokemon, setClickedPokemon] = useState('')
     const [showTeam, setShowTeam] = useState(true)
 
-    // useEffect(() => {
-    //     fetchPokemon()
-    // })
-
-
-
-
-
-
     const fetchPokemon = async (e) => {
         e.preventDefault()
-        console.log(type)
         const response  = await fetch(`https://pokeapi.co/api/v2/type/${type}`)
         const data = await response.json()
-        console.log(data.pokemon.length)
         generateTeam(data.pokemon)
         setSelected(!(selected))
 
@@ -65,55 +54,35 @@ function App() {
             }
 
         }
-        console.log(teamArray)
         setTeam(teamArray)
-
-
-
     }
 
     const checkDuplicate = (teamArray, pokeToCheck) => {
-
         var i;
-
         for (i=0; i < teamArray.length; i++) {
-
             if (JSON.stringify(teamArray[i]) === JSON.stringify(pokeToCheck)) {
-
                 return true;
             }
         }
-
         return false;
-
     }
 
     const checkObjPropertyDuplicate = (moveArray, nameToCheck) => {
-
         var i;
-
         for (i=0; i < moveArray.length; i++) {
-
             if (JSON.stringify(moveArray[i]['name']) === JSON.stringify(nameToCheck)) {
-
                 return true;
             }
         }
-
         return false;
-
     }
-
 
     const createAttribute = async (randomPokemonData) => {
         var pokeAttributes = {};
         pokeAttributes['name'] = randomPokemonData['name'][0].toUpperCase() + randomPokemonData['name'].substring(1)
 
-
-        // this is for gender calculations
         const pokeSpecies = await fetch(`${randomPokemonData['species']['url']}`)
         const pokeSpeciesData = await pokeSpecies.json()
-
 
         if (pokeSpeciesData['gender_rate'] === 8) {
             pokeAttributes['gender'] = 'F'
@@ -132,7 +101,6 @@ function App() {
             }
         }
 
-
         pokeAttributes['ability'] = randomPokemonData['abilities'][Math.floor(Math.random() * (randomPokemonData['abilities'].length))]['ability']
 
         const abilityDescription = await fetch(pokeAttributes['ability']['url'])
@@ -146,7 +114,6 @@ function App() {
         const naturesData = await natures.json()
 
         pokeAttributes['nature'] = naturesData['results'][Math.floor(Math.random() * (naturesData['results'].length))]
-
 
         var moves = [];
 
@@ -189,24 +156,11 @@ function App() {
 
         pokeAttributes['characteristic'] = pokeCharacteristic['description']
 
-
-
-        console.log(pokeAttributes)
-
         setPokeAttribute(pokeAttribute => [...pokeAttribute, pokeAttributes])
-        // setPokeAttribute({ pokeAttribute: [...pokeAttribute, pokeAttributes]})
-
-        // setTheArray(oldArray => [...oldArray, `Entry ${oldArray.length}`])
 
     }
 
-    // const getPokemon = () => {
-    //
-    //     setType(e.target.value)
-    // }
-
     const setSearchType = e => {
-        console.log(e.target.value)
 
         setType(e.target.value)
     }
@@ -240,13 +194,3 @@ function App() {
 }
 
 export default App;
-
-
-
-
-
-// TO DO
-
-
-    //Upload to heroku or github
-    // Make animation!

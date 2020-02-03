@@ -2,16 +2,12 @@ import React from 'react';
 import '../mysass.scss';
 import Colors from '../Colors.json'
 import AttributeBack from './AttributeBack'
+import Type from './Type'
 
 
 
 
 const Attributes = ({pokeAttributes, teamArray, clickedPokemon, setShowTeam, setClickedPokemon}) => {
-    //
-    // var colors = {
-    //     'normal':'grey',
-    //     'fire': 'red'
-    // }
 
     const pokeAttribute = pokeAttributes.find(pokemon => pokemon.name === clickedPokemon)
     const teamPoke = teamArray.find(pokemon => pokemon.name === clickedPokemon.toLowerCase())
@@ -30,7 +26,7 @@ const Attributes = ({pokeAttributes, teamArray, clickedPokemon, setShowTeam, set
                 <div className="gender box"> {gender}</div>
                 {
                     teamPoke.types.map(type => (
-                        <img key={type.type.name} className="type-icon box" alt="type" src={require(`../images/${type.type.name}.png`)} />
+                        <Type type={type.type.name} />
                     ))
                 }
 
@@ -45,7 +41,7 @@ const Attributes = ({pokeAttributes, teamArray, clickedPokemon, setShowTeam, set
 
             <div className="column three">
                 <div className="hold-moves box">
-                    
+
                     {
 
                         pokeAttribute.moves.map((move, index) => (
